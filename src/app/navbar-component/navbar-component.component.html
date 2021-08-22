@@ -1,0 +1,29 @@
+
+
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+
+      <span mat-button ><img mat-button src="../../assets/img/sqa.png" alt="SQA Logo" width="100" height="50">
+      </span>  
+      
+      <span mat-button>SQA</span>
+
+      <button mat-button [matMenuTriggerFor]="menu">Principal</button>
+<mat-menu #menu="matMenu">
+  <a routerLink="/"  mat-menu-item>Principal</a>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="login">Login</button>
+<mat-menu #login="matMenu">
+  <a routerLink="/login"  mat-menu-item>Login</a>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="registrar">Registrar</button>
+<mat-menu #registrar="matMenu">
+  <a routerLink="/registrar"  mat-menu-item>Registrar</a>
+</mat-menu>
+
+
+
+    </mat-toolbar-row>
