@@ -7,8 +7,9 @@
       <span mat-button ><img mat-button src="../../assets/img/sqa.png" alt="SQA Logo" width="100" height="50">
       </span>  
       
-      <span mat-button>SQA</span>
+      <!-- *ngIf="!usuarioservice.confirmarLogin(); else logout" -->
 
+ <ng-container  >
       <button mat-button [matMenuTriggerFor]="menu">Principal</button>
 <mat-menu #menu="matMenu">
   <a routerLink="/"  mat-menu-item>Principal</a>
@@ -23,6 +24,22 @@
 <mat-menu #registrar="matMenu">
   <a routerLink="/registrar"  mat-menu-item>Registrar</a>
 </mat-menu>
+
+</ng-container>
+
+<!-- #logout 
+<ng-template>
+  <button mat-button [matMenuTriggerFor]="salir">Salir</button>
+<mat-menu #salir="matMenu">
+  <a (click)="usuarioservice.logout()" mat-menu-item>Salir</a>
+</mat-menu>
+</ng-template>
+-->
+
+
+
+  
+
 
 
 

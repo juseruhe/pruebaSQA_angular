@@ -20,7 +20,12 @@ import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SQAComponent } from './sqa/sqa.component';
+
+import { AuthGuard } from './auth.guard';
+
+import { TokenService } from './token.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     MainComponent,
     CrearUsuarioComponent,
+    SQAComponent,
     
    
   ],
@@ -45,7 +51,13 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    AuthGuard, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

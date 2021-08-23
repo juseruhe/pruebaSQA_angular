@@ -1,0 +1,41 @@
+
+ <a href="../../assets/terminosycondiciones.pdf" mat-raised-button color="primary">Descargar Términos y Condiciones</a>
+
+<h1>Bienvenido  </h1>
+
+
+<form  [formGroup]="formularioUsuario"  class="example-form" (ngSubmit)="actualizar()"  >
+
+  
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombres:</mat-label>
+        <input type="text" matInput placeholder="Antonia Francisca" required formControlName="nombre">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Apellidos:</mat-label>
+        <input type="text" matInput placeholder="Perez Martinez"  required formControlName="apellido">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cédula:</mat-label>
+        <input type="number" matInput placeholder="ejemplo: 28965554" required formControlName="cedula">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email:</mat-label>
+        <input type="email" matInput placeholder="nombre@correo.com"  required formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Contraseña:</mat-label>
+        <input type="password" matInput placeholder="****" required formControlName="contrasena">
+      </mat-form-field>
+
+      
+
+
+<button type="submit" mat-raised-button  mat-button color="primary">Enviar</button>
+
+</form>

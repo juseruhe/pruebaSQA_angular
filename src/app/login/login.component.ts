@@ -31,18 +31,43 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cadenaAleatoria(){
+    
+    let resultado = '';
+    const caracteres = 'GV9Jm2u7rmsCe65wKzPTw5jtS38n2tVEGiijklmnopqrstuvwxyz0123456789';
+    const caracteresLength = caracteres.length;
+    for (let i = 0; i < caracteresLength; i++) {
+        resultado += caracteres.charAt(Math.floor(Math.random() * caracteresLength));
+    }
+
+    return resultado;
+   
+}
+
   login(){
 
     //console.log(this.loginUsuario)
 
     this.usuarioservice.loguearUsuario(this.loginUsuario.value).subscribe(respuesta => {
       console.log(respuesta)
-      localStorage.setItem('token',respuesta);
+      
+      if(respuesta != 0) {
+      localStorage.setItem('token',this.cadenaAleatoria());
+      localStorage.setItem('correo',this.loginUsuario.value["email"]);
       this.ruta.navigateByUrl('sqa')
+      }
+
+      else {
+
+        this.ruta.navigateByUrl('login');
+      }
 
     });
    
   }
+
+
+  
 
   
 
