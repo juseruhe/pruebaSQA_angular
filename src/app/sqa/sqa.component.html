@@ -1,8 +1,14 @@
 
+
+ 
+
+
  <a href="../../assets/terminosycondiciones.pdf" mat-raised-button color="primary">Descargar Términos y Condiciones</a>
 
-<h1>Bienvenido  </h1>
 
+  <h1>Bienvenido {{Usuarios["nombre"]}} a SQA  </h1>
+
+ 
 
 <form  [formGroup]="formularioUsuario"  class="example-form" (ngSubmit)="actualizar()"  >
 

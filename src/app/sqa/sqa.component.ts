@@ -13,12 +13,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SQAComponent implements OnInit {
 
+  Usuarios: any
+    
   
 
   formularioUsuario: FormGroup
 
   constructor(private usuarioservice: UsuarioService,public formulario:FormBuilder,
     private activeRoute: ActivatedRoute
+
     
     ) { 
 
@@ -27,6 +30,12 @@ export class SQAComponent implements OnInit {
 
       this.usuarioservice.consultarDatosCorreo(localStorage.getItem('correo')).subscribe(respuesta => {
         console.log(respuesta)
+
+        this.Usuarios = respuesta
+
+        console.log(this.Usuarios)
+
+
         this.formularioUsuario.setValue({
           id: respuesta["id"],
           nombre: respuesta["nombre"],
