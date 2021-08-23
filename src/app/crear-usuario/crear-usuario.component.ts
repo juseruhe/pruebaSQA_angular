@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-
+import { Router } from '@angular/router';
 
 import { UsuarioService } from '../usuario.service';
 
@@ -16,7 +16,10 @@ export class CrearUsuarioComponent implements OnInit {
 formularioUsuario: FormGroup
 
 
-  constructor(public formulario: FormBuilder, private usuarioservice: UsuarioService) {
+  constructor(public formulario:FormBuilder, 
+    private usuarioservice:UsuarioService,
+    private ruta:Router
+    ) {
 
     this.formularioUsuario = this.formulario.group({
       nombre: [''],
@@ -24,7 +27,7 @@ formularioUsuario: FormGroup
       cedula: [''],
       email: [''],
       contrasena: [''],
-    })
+    });
 
 
    }
@@ -39,9 +42,14 @@ formularioUsuario: FormGroup
 
   registrar():any{
 
-    this.usuarioservice.registrarUsuario(this.formularioUsuario.value).subscribe();
+    console.log("Recepciona Datos!!")
 
-  }
+    console.log(this.formularioUsuario)
+
+   this.usuarioservice.registrarUsuario(this.formularioUsuario.value).subscribe();
+
+    this.ruta.navigateByUrl('/');
   
-
+  
+  }
 }

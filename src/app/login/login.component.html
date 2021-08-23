@@ -3,16 +3,16 @@
 <h1>Iniciar Sesión</h1>
 
 
-<form action="" class="example-form" method="post"  >
+<form [formGroup]="loginUsuario"  class="example-form" (ngSubmit)="login()"  >
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Correo:</mat-label>
-        <input type="text" matInput placeholder="nombre@correo.com" required>
+        <input type="text" matInput placeholder="nombre@correo.com" required formControlName="email">
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Contraseña:</mat-label>
-        <input type="password" matInput  placeholder="****" required>
+        <input type="password" matInput  placeholder="****" required formControlName="contrasena">
       </mat-form-field>
 
 

@@ -12,6 +12,8 @@ import {  Observable } from 'rxjs';
 export class UsuarioService {
 
   API = "http://localhost:8000/api/usuario/";
+
+  LOGIN = "http://localhost:8000/api/login";
   
 
   constructor(private clientHttp: HttpClient) {}
@@ -20,6 +22,11 @@ export class UsuarioService {
   registrarUsuario(datosUsuario: Usuario): Observable<any> {
 
     return this.clientHttp.post(this.API,datosUsuario)
+  }
+
+  loguearUsuario(datosUsuario: Usuario): Observable<any>{
+
+    return this.clientHttp.post(this.LOGIN,datosUsuario)
   }
  
 

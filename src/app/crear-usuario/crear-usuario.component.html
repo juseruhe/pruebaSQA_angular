@@ -3,7 +3,7 @@
 <h1>Registrar Usuario</h1>
 
 
-<form action="" class="example-form" method="post"  >
+<form  [formGroup]="formularioUsuario" (ngSubmit)="registrar()" class="example-form"   >
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Nombres:</mat-label>
@@ -33,6 +33,6 @@
       
 
 
-<button type="submit" mat-button color="primary">Enviar</button>
+<button type="submit" mat-raised-button  mat-button color="primary">Enviar</button>
 
 </form>
