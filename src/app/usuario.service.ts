@@ -17,12 +17,19 @@ export class UsuarioService {
 
   LOGIN = "http://localhost:8000/api/login";
 
+  TIEMPO = "http://localhost:3000/api/tiempo"
+
   
   
 
   constructor(private clientHttp: HttpClient,
     private ruta: Router
     ) {}
+
+
+  mostrarUsuarios() {
+    return this.clientHttp.get(this.API);
+  }
 
   
   registrarUsuario(datosUsuario: Usuario): Observable<any> {
@@ -61,8 +68,15 @@ export class UsuarioService {
 
   logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('correo')
 
     this.ruta.navigateByUrl('login');
+
+  }
+
+  tiempo(): Observable <any> {
+
+    return this.clientHttp.get<any>(this.TIEMPO)
 
   }
 

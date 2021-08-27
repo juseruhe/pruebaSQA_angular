@@ -18,6 +18,8 @@ import { MainComponent } from './main/main.component';
 import {MatInputModule} from '@angular/material/input';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 
+import {MatTableModule} from '@angular/material/table';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -27,6 +29,25 @@ import { AuthGuard } from './auth.guard';
 
 import { TokenService } from './token.service';
 
+import {MatGridListModule} from '@angular/material/grid-list';
+
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+import {MatIconModule} from '@angular/material/icon';
+import { InicioComponent } from './inicio/inicio.component';
+
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+import {MatCardModule} from '@angular/material/card';
+
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+import {MatRadioModule} from '@angular/material/radio';
+
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +56,7 @@ import { TokenService } from './token.service';
     MainComponent,
     CrearUsuarioComponent,
     SQAComponent,
+    InicioComponent,
     
    
   ],
@@ -50,6 +72,16 @@ import { TokenService } from './token.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatGridListModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatCardModule,
+    MatProgressBarModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatSlideToggleModule,
+    MatTableModule,
   ],
   providers: [
     AuthGuard, {

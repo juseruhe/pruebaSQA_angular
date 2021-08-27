@@ -4,6 +4,7 @@ import { UsuarioService } from '../usuario.service';
 
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -20,7 +21,8 @@ export class SQAComponent implements OnInit {
   formularioUsuario: FormGroup
 
   constructor(private usuarioservice: UsuarioService,public formulario:FormBuilder,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private ruta: Router
 
     
     ) { 
@@ -55,9 +57,16 @@ export class SQAComponent implements OnInit {
         email: [''],
         contrasena: [''],
       });
+
+     
+
+
+    
 }
 
   ngOnInit(): void {
+   
+   
   }
 
   actualizar():any{
@@ -68,7 +77,7 @@ export class SQAComponent implements OnInit {
      console.log(respuesta)
     })
 
-    
+    this.ruta.navigateByUrl('sqa')
        
   }
    

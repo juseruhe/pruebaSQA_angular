@@ -9,7 +9,7 @@ import { UsuarioService } from '../usuario.service';
 })
 export class NavbarComponentComponent implements OnInit {
 
-  constructor(private usuarioservice: UsuarioService) { 
+  constructor(public usuarioservice: UsuarioService) { 
 
     
   }

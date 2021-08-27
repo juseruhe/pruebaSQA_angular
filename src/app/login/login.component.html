@@ -1,7 +1,14 @@
 
+<mat-grid-list cols="3">
 
-<h1>Iniciar Sesión</h1>
+<mat-grid-tile>
+  <img src="../../assets/img/sqa.png" alt="sqa">
+</mat-grid-tile>
 
+
+<mat-grid-tile >
+
+  <h1>Iniciar Sesión</h1>
 
 <form [formGroup]="loginUsuario"  class="example-form" (ngSubmit)="login()"  >
 
@@ -20,3 +27,8 @@
 <button type="submit" mat-raised-button mat-button color="primary">Enviar</button>
 
 </form>
+</mat-grid-tile>
+
+<mat-grid-tile></mat-grid-tile>
+
+</mat-grid-list>

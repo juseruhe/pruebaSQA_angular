@@ -8,7 +8,9 @@ import { UsuarioService } from './usuario.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(){
+  constructor(private usuarioservice: UsuarioService){
+
+    
 
   }
 }

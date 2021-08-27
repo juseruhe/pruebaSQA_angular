@@ -1,14 +1,31 @@
 
+<mat-grid-list cols=3 rowHeight="2:1">
 
+  <mat-grid-tile><a href="../../assets/terminosycondiciones.pdf" mat-raised-button color="primary">Descargar Términos y Condiciones</a></mat-grid-tile>
+
+ <mat-grid-tile> <h1>Bienvenido {{Usuarios["nombre"]}} a SQA  </h1></mat-grid-tile> 
+
+ <mat-grid-tile></mat-grid-tile>
+
+  
+
+</mat-grid-list>
+
+  <mat-grid-list cols="3">
+ 
+<mat-grid-tile>
+ 
+  <img src="../../assets/img/sqa.png" alt="sqa">
+
+</mat-grid-tile>
  
 
-
- <a href="../../assets/terminosycondiciones.pdf" mat-raised-button color="primary">Descargar Términos y Condiciones</a>
-
-
-  <h1>Bienvenido {{Usuarios["nombre"]}} a SQA  </h1>
-
  
+<mat-grid-tile>
+
+
+  <h3>Datos Personales de {{Usuarios["nombre"]}} {{Usuarios["apellido"]}} </h3>
+
 
 <form  [formGroup]="formularioUsuario"  class="example-form" (ngSubmit)="actualizar()"  >
 
@@ -45,3 +62,10 @@
 <button type="submit" mat-raised-button  mat-button color="primary">Enviar</button>
 
 </form>
+</mat-grid-tile>
+
+<mat-grid-tile></mat-grid-tile>
+
+
+
+</mat-grid-list>
