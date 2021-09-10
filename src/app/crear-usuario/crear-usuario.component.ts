@@ -13,6 +13,8 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 })
 export class CrearUsuarioComponent implements OnInit {
 
+  spinner = false
+
 formularioUsuario: FormGroup
 
 
@@ -45,10 +47,14 @@ formularioUsuario: FormGroup
     console.log("Recepciona Datos!!")
 
     console.log(this.formularioUsuario)
+    
+   
 
    this.usuarioservice.registrarUsuario(this.formularioUsuario.value).subscribe();
 
-    this.ruta.navigateByUrl('/');
+  
+
+    this.ruta.navigateByUrl('inicio');
   
   
   }

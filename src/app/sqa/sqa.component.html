@@ -62,9 +62,16 @@
 <button type="submit" mat-raised-button  mat-button color="primary">Enviar</button>
 
 </form>
+
+
 </mat-grid-tile>
 
-<mat-grid-tile></mat-grid-tile>
+<mat-grid-tile>
+
+   
+  <mat-spinner *ngIf="spinner == true"></mat-spinner>
+
+</mat-grid-tile>
 
 
 

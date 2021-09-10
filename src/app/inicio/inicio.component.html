@@ -13,23 +13,28 @@
           <td>Nombre</td>
           <td>Apellido</td>
           <td>Correo</td>
+          <td>Acciones</td>
          
       </tr>
-      <tr *ngFor="let usuario of Usuarios">
+      <tr *ngFor="let usuario of Usuarios; let indice=index">
           <td>{{usuario.id}}</td>
           <td>{{usuario.nombre}}</td>
           <td>{{usuario.apellido}}</td>
           <td>{{usuario.email}}</td>
+          <td>
+            <a routerLink="/usuario/{{usuario.id}}">Mostrar</a>
+            <a routerLink="/usuario/editar/{{usuario.id}}" >Editar</a>
+            <a (click)="eliminar(usuario.id,indice)">Eliminar</a>
+          </td>
           
       </tr>
   </table>
 
   
-
-
   
   
   
+  
 
-<mat-spinner></mat-spinner>
+
 

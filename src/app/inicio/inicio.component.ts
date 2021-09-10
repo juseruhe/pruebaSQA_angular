@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 
+import { Router,ActivatedRoute } from '@angular/router';
+
+
 import { UsuarioService } from '../usuario.service';
 @Component({
   selector: 'app-inicio',
@@ -13,7 +16,8 @@ export class InicioComponent implements OnInit {
 
   
 
-  constructor(private usuarioservicio: UsuarioService) {
+  constructor(private usuarioservicio: UsuarioService,
+    private ruta: Router) {
     
     
   }
@@ -34,6 +38,21 @@ export class InicioComponent implements OnInit {
        
       console.log(this.Usuarios)
       
+  }
+
+  eliminar(id:any,indice:any){
+    console.log(id)
+
+    console.log(indice)
+
+    this.usuarioservicio.eliminar(id).subscribe(respuesta => {
+
+      this.Usuarios.splice(indice,1)
+    });
+
+    this.ruta.navigateByUrl('inicio')
+
+     
   }
 
 }

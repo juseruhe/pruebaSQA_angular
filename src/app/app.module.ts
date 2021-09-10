@@ -47,6 +47,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { CosaComponent } from './cosa/cosa.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     CrearUsuarioComponent,
     SQAComponent,
     InicioComponent,
+    CosaComponent,
+    UsuarioComponent,
     
    
   ],

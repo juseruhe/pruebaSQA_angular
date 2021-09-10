@@ -80,5 +80,16 @@ export class UsuarioService {
 
   }
 
+  usuario(id:any): Observable <any>{
+
+    return  this.clientHttp.get(this.API+id)
+
+  }
+
+  eliminar(id:any): Observable <any>{
+    return this.clientHttp.delete(this.API+id)
+  }
+
+  
 
 }

@@ -16,7 +16,7 @@ export class SQAComponent implements OnInit {
 
   Usuarios: any
     
-  
+  spinner= false
 
   formularioUsuario: FormGroup
 
@@ -71,13 +71,20 @@ export class SQAComponent implements OnInit {
 
   actualizar():any{
 
+    
+
     console.log(this.formularioUsuario.value)
 
     this.usuarioservice.actualizar(this.formularioUsuario.value["id"],this.formularioUsuario.value).subscribe( respuesta => {
-     console.log(respuesta)
+      this.spinner = true
+      console.log(respuesta)
     })
 
+    
+
     this.ruta.navigateByUrl('sqa')
+
+    this.spinner = false
        
   }
    

@@ -7,6 +7,8 @@ import { SQAComponent } from './sqa/sqa.component';
 
 import { AuthGuard } from './auth.guard';
 import { InicioComponent } from './inicio/inicio.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { CosaComponent } from './cosa/cosa.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,10 @@ const routes: Routes = [
 {path: 'login',component: LoginComponent},
 {path: 'registrar',component: CrearUsuarioComponent},
 {path: 'sqa',component: SQAComponent, canActivate: [AuthGuard]},
-{path: 'inicio',component: InicioComponent}
+{path: 'inicio',component: InicioComponent},
+{path: 'usuario/:id',component:UsuarioComponent},
+{path:'usuario/editar/:id',component:CosaComponent}
+
 
   
 ]
